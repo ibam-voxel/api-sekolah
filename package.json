@@ -1,0 +1,52 @@
+{
+  "name": "finish-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "createdb": "npx sequelize-cli db:create",
+    "deletedb": "npx sequelize-cli db:drop",
+    "migratedb": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migratedb",
+    "seed": "npx sequelize-cli db:seed:all",
+    "test": "jest --detectOpenHandles --verbose false --force-exit ",
+    "start": "nodemon ./bin/www",
+    "start:development": "cross-env DEBUG=finish-service:* & nodemon ./bin/www",
+    "lint-fix": "eslint . --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-validator": "^6.5.0",
+    "faker": "^5.4.0",
+    "flaverr": "^1.10.0",
+    "fs": "0.0.1-security",
+    "helmet": "^3.22.0",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.19",
+    "morgan": "^1.9.1",
+    "mysql2": "^2.1.0",
+    "pad-number": "0.0.4",
+    "path": "^0.12.7",
+    "sequelize": "^5.21.11"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.1.0",
+    "jest-serial-runner": "^1.1.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  }
+}
